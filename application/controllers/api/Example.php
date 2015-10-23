@@ -62,7 +62,6 @@ class Example extends REST_Controller
     {
         //$this->some_model->updateUser( $this->get('id') );
         $message = array('id' => $this->get('id'), 'name' => $this->post('name'), 'email' => $this->post('email'), 'message' => 'ADDED!');
-        echo $message; 
         $this->response($message, 200); // 200 being the HTTP response code
     }
     
