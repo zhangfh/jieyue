@@ -161,6 +161,9 @@ $assets = $this->config->item('assets');
 	</div>
 
 	<div class="large-4 medium-4 columns">
+			<a href="<?php echo $base_url; ?>welcome/new" class="small round button">TreVor Test</a><br/>
+	</div>
+	<div class="large-4 medium-4 columns">
 		<h5>Try one of these buttons:</h5>
 		<p><a href="#" class="small button">Simple Button</a><br/>
 			<a href="#" class="small radius button">Radius Button</a><br/>
