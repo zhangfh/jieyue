@@ -8,4 +8,25 @@
   add BASE_URL in config.php
   How to Use:
   "<?=BASE_URL;?>/assets/js/app.js"
+4. add Sir trevor
+  1)File List
+        application/libraries/Sioen.php
+        application/third_party/Michelf/
+        application/third_party/Sioen/
+        application/views/admin/
+        assets/js/trevor/
+  2)How to Use
+    a) include css as follow:
+      <link rel="stylesheet" href="<?php echo BASE_URL;?>/assets/js/trevor/sir-trevor.css" />
+      <link rel="stylesheet" href="<?php echo BASE_URL;?>/assets/js/trevor/sir-trevor-bootstrap.css" />
+      <link rel="stylesheet" href="<?=BASE_URL;?>/assets/js/trevor/sir-trevor-icons.css" />
+    b) include js as follow:
+      <script src="<?=BASE_URL;?>/assets/js/trevor/underscore.js"></script>
+      <script src="<?=BASE_URL;?>/assets/js/trevor/eventable.js"></script>
+      <script src="<?=BASE_URL;?>/assets/js/trevor/sortable.min.js"></script>
+      <script src="<?=BASE_URL;?>/assets/js/trevor/sir-trevor.js"></script>
+      <script src="<?=BASE_URL;?>/assets/js/trevor/sir-trevor-bootstrap.js"></script>
+    c) see view/admin/addpage.php 
+
+
 
