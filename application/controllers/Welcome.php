@@ -39,19 +39,38 @@ class Welcome extends CI_Controller {
 		$this->config->set_item('language', 'schinese'); //importang , fix bug
                 $this->load->library('form_validation');
                 //Set validation rules
-                $this->form_validation->set_rules('pageURL', 'page URL', 'trim|alpha_dash|required');
-                $this->form_validation->set_rules('pageTitle', 'page title', 'trim|required');
-                $this->form_validation->set_rules('navTitle', 'navigation title', 'trim|required');
+			log_message('error', 'content:'.$this->input->post('content'));
+			print_r($_POST);
+			log_message('error', 'pageurl:'.$this->input->post('pageURL'));
+			log_message('error', 'pagetitle:'.$this->input->post('pageTitle'));
+			log_message('error', 'navTitle:'.$this->input->post('navTitle'));
+                $this->form_validation->set_rules('pageURL', 'page URL', 'required');
+                $this->form_validation->set_rules('pageTitle', 'page title', 'required');
+                $this->form_validation->set_rules('navTitle', 'navigation title', 'required');
 
                 if($this->form_validation->run() == FALSE) {
                         //Validation failed
-                        $this->addPage();
+			log_message('error', 'run false');
+                        //$this->addPage();
+			echo "validation error";
                 }  else  {
                         //Validation passed
                         //Add the page
                         $this->load->library('Sioen');
+
+			log_message('error', 'pagePublished:'.$this->input->post('pagePublished'));
+			log_message('error', 'content'.$this->input->post('content'));
+                	if ($this->input->post('content') != ""){
+        			$sirTrevorInput = $this->input->post('content');
+        			$converter = new Converter();
+        			$HTMLContent = $converter->toHtml($sirTrevorInput);
+			} else {
+                		$HTMLContent = "";
+                	}
+
                         //Return to page list
-                        redirect('/welcome/new', 'refresh');
+                        //redirect('/welcome/new', 'refresh');
+			echo $HTMLContent;
                 }
         }
 
