@@ -9,15 +9,15 @@ $assets = $this->config->item('assets');
       <div class="span12">
           <div class="widget widget-nopad">
             <div class="widget-header"> <i class="icon-user"></i>
-              <h3><?php echo $this->lang->line('pages_new_header'); ?></h3>
+              <h3>New Page</h3>
             </div>
             <!-- /widget-header -->
             <div class="widget-content">
-            <?php echo form_error('pageTitle', '<div class="alert">', '</div>'); ?>									
-            <?php echo form_error('pageURL', '<div class="alert">', '</div>'); ?>									
+            		<?php echo form_error('pageTitle', '<div class="alert">', '</div>'); ?>									
+            		<?php echo form_error('pageURL', '<div class="alert">', '</div>'); ?>									
 			<?php 
 			$attr = array('id' => 'contentForm');
-			echo form_open($base_url.'/admin/pages/new/add', $attr); ?>
+			echo form_open($base_url.'welcome/new/add', $attr); ?>
 						<?php 	$data = array(
 						  'name'        => 'content',
 						  'id'          => 'content',
@@ -32,24 +32,24 @@ $assets = $this->config->item('assets');
                     
                     <div class="form-actions">
              
-                    <a class="btn btn-primary" data-toggle="modal" href="#attributes"><?php echo $this->lang->line('btn_next'); ?></a>
-					<a class="btn" href="<?php echo $base_url; ?>/admin/pages"><?php echo $this->lang->line('btn_cancel'); ?></a>
-				</div> <!-- /form-actions -->
+                    	<a class="radius button" data-toggle="modal" href="#" data-reveal-id="attributes" >Next</a>
+			<a class="radius button" href="<?php echo $base_url; ?>welcome/addpage">Cancel</a>
+
+		    </div> <!-- /form-actions -->
              
                 
                 <!-- /widget-content --> 
             </div>
           </div>
           <!-- /widget -->
-          
      
-		<div id="attributes" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="myModalLabel"><?php echo $this->lang->line('pages_new_attributes'); ?></h3>
-            </div><div class="modal-body">
-            <div class="alert alert-info"><?php echo $this->lang->line('pages_new_required'); ?></div>	
+		<div id="attributes" class="reveal-modal" data-reveal  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+			<div class="modal-body">
+            <div class="alert alert-info">Required</div>	
             <div class="control-group">		
             		<?php echo form_error('pageTitle', '<div class="alert">', '</div>'); ?>									
-					<label class="control-label" for="pageTitle"><?php echo $this->lang->line('pages_new_title'); ?></label>
+					<label class="control-label" for="pageTitle">Title</label>
 					<div class="controls">
                     <?php 	$data = array(
 						  'name'        => 'pageTitle',
@@ -64,7 +64,7 @@ $assets = $this->config->item('assets');
                 
                 <div class="control-group">		
             		<?php echo form_error('navTitle', '<div class="alert">', '</div>'); ?>									
-					<label class="control-label" for="navTitle"><?php echo $this->lang->line('pages_new_nav'); ?></label>
+					<label class="control-label" for="navTitle">New Nav</label>
 					<div class="controls">
                     <?php 	$data = array(
 						  'name'        => 'navTitle',
@@ -78,7 +78,7 @@ $assets = $this->config->item('assets');
 				</div> <!-- /control-group -->
                 
                 <div class="control-group">		
-					<label class="control-label" for="pageKeywords"><?php echo $this->lang->line('pages_new_keywords'); ?></label>
+					<label class="control-label" for="pageKeywords">KeyWord</label>
 					<div class="controls">
 						 <?php 	$data = array(
 						  'name'        => 'pageKeywords',
@@ -93,7 +93,7 @@ $assets = $this->config->item('assets');
 				</div> <!-- /control-group -->
 
 				<div class="control-group">		
-					<label class="control-label" for="pageDescription"><?php echo $this->lang->line('pages_new_description'); ?></label>
+					<label class="control-label" for="pageDescription">Description</label>
 					<div class="controls">
 						 <?php 	$data = array(
 						  'name'        => 'pageDescription',
@@ -109,7 +109,7 @@ $assets = $this->config->item('assets');
                
 				<div class="control-group">		
             		<?php echo form_error('pageURL', '<div class="alert">', '</div>'); ?>									
-					<label class="control-label" for="pageURL"><?php echo $this->lang->line('pages_new_url'); ?></label>
+					<label class="control-label" for="pageURL">New Url</label>
 					<div class="controls">
 						 <?php 	$data = array(
 						  'name'        => 'pageURL',
@@ -125,7 +125,7 @@ $assets = $this->config->item('assets');
                 
                <div class="control-group">		
                 <?php echo form_error('pagePublished', '<div class="alert">', '</div>'); ?>									
-					<label class="control-label" for="pagePublished"><?php echo $this->lang->line('pages_new_publish'); ?></label>
+					<label class="control-label" for="pagePublished">Publish</label>
 					<div class="controls">
 						
                         <?php 	
@@ -141,7 +141,7 @@ $assets = $this->config->item('assets');
 				</div> <!-- /control-group -->              
                  <div class="control-group">		
                 <?php echo form_error('pageTemplate', '<div class="alert">', '</div>'); ?>									
-					<label class="control-label" for="pageTemplate"><?php echo $this->lang->line('pages_new_template'); ?></label>
+					<label class="control-label" for="pageTemplate">Template</label>
 					<div class="controls">
 						
                         <?php
@@ -155,8 +155,7 @@ $assets = $this->config->item('assets');
 				</div> <!-- /control-group -->  
             </div>
             <div class="modal-footer">
-            <button class="btn" data-dismiss="modal" aria-hidden="true"><?php echo $this->lang->line('btn_back'); ?></button>
-            <button class="btn btn-primary" onClick="formSubmit()"><?php echo $this->lang->line('btn_save'); ?></button>
+            <button class="btn btn-primary" onClick="formSubmit()">Save</button>
             </div></div>
            <?php  echo form_close(); ?>
      </div>
