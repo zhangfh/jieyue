@@ -4,4 +4,8 @@
   When Modernizr runs, it removes the "no-js" class and replaces it with "js". This is a way to know in your CSS whether or not Javascript support is enabled.
 2.Ion Auth
   https://github.com/benedmunds/CodeIgniter-Ion-Auth
+3.config.php
+  add BASE_URL in config.php
+  How to Use:
+  "<?=BASE_URL;?>/assets/js/app.js"
 
