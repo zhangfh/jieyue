@@ -131,14 +131,15 @@ $assets = $this->config->item('assets');
                         <?php 	
 						$att = 'id="pagePublished" class="span5"';
 						$data = array(
-						  '1'        => $this->lang->line('option_yes'),
-						  '0'         => $this->lang->line('option_no'),
+						  '1'        => 'yes',
+						  '0'         =>'no',
 						);
 			
 						echo form_dropdown('pagePublished', $data, '1', $att); ?>
 
-					</div> <!-- /controls -->				
-				</div> <!-- /control-group -->              
+					</div> 				
+				</div> 
+<!--            
                  <div class="control-group">		
                 <?php echo form_error('pageTemplate', '<div class="alert">', '</div>'); ?>									
 					<label class="control-label" for="pageTemplate">Template</label>
@@ -151,8 +152,9 @@ $assets = $this->config->item('assets');
 
 						echo form_dropdown('pageTemplate', $data, 'home', $att); ?>
 
-					</div> <!-- /controls -->				
-				</div> <!-- /control-group -->  
+					</div> 
+				</div> 
+-->
             </div>
             <div class="modal-footer">
             <button class="btn btn-primary" onClick="formSubmit()">Save</button>
